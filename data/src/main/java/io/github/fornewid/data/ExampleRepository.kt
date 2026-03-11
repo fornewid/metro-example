@@ -13,8 +13,9 @@ interface ExampleRepository {
 }
 
 @ContributesBinding(AppScope::class)
-class ExampleRepositoryImpl @Inject constructor(
-    @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
+@Inject
+class ExampleRepositoryImpl(
+    @param:IoDispatcher private val ioDispatcher: CoroutineDispatcher,
 ) : ExampleRepository {
 
     override suspend fun getSomething(): String {

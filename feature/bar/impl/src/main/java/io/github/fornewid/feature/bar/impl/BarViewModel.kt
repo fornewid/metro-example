@@ -7,7 +7,8 @@ import dev.zacsweers.metro.Inject
 import io.github.fornewid.data.ExampleRepository
 import kotlinx.coroutines.launch
 
-class BarViewModel @Inject constructor(
+@Inject
+class BarViewModel(
     private val exampleRepository: ExampleRepository,
 ) : ViewModel() {
 

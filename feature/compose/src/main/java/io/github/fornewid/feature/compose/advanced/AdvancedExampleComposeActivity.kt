@@ -36,7 +36,8 @@ interface AdvancedComposeComponent {
     fun exampleStateHolder(): ExampleStateHolder
 }
 
-class ExampleStateHolder @Inject constructor(
+@Inject
+class ExampleStateHolder(
     val bar: Bar,
 ) {
     override fun toString(): String {

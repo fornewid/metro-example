@@ -4,7 +4,8 @@ import androidx.lifecycle.ViewModel
 import dev.zacsweers.metro.Inject
 import io.github.fornewid.feature.bar.Bar
 
-class ExampleViewModel @Inject constructor(
+@Inject
+class ExampleViewModel(
     private val bar: Bar,
 ) : ViewModel() {
 

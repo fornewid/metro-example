@@ -10,7 +10,8 @@ interface ExampleUseCase {
 }
 
 @ContributesBinding(AppScope::class)
-class ExampleUseCaseImpl @Inject constructor(
+@Inject
+class ExampleUseCaseImpl(
     private val bar: Bar,
 ) : ExampleUseCase {
 

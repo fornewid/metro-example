@@ -8,7 +8,8 @@ import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.feature.work.ExampleTasks
 
 @ContributesBinding(AppScope::class)
-class ExampleTasksImpl @Inject constructor(
+@Inject
+class ExampleTasksImpl(
     private val workManager: WorkManager,
 ) : ExampleTasks {
 

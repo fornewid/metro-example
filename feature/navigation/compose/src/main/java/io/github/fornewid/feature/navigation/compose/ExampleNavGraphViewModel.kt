@@ -4,7 +4,8 @@ import androidx.lifecycle.ViewModel
 import dev.zacsweers.metro.Inject
 import io.github.fornewid.feature.bar.Bar
 
-class ExampleNavGraphViewModel @Inject constructor(
+@Inject
+class ExampleNavGraphViewModel(
     private val bar: Bar,
 ) : ViewModel() {
 

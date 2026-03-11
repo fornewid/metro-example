@@ -9,7 +9,8 @@ import io.github.fornewid.feature.foo.Foo
 
 @SingleIn(AppScope::class)
 @ContributesBinding(AppScope::class)
-class BarImpl @Inject constructor(
+@Inject
+class BarImpl(
     private val foo: Foo,
 ) : Bar {
 

@@ -6,7 +6,8 @@ import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.feature.foo.Foo
 
 @ContributesBinding(AppScope::class)
-class FooImpl @Inject constructor() : Foo {
+@Inject
+class FooImpl : Foo {
 
     override fun toString(): String {
         return "FooImpl@" + hashCode().toString(16)

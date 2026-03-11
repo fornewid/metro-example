@@ -8,7 +8,8 @@ import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.feature.bar.BarNavigator
 
 @ContributesBinding(AppScope::class)
-class BarNavigatorImpl @Inject constructor() : BarNavigator {
+@Inject
+class BarNavigatorImpl : BarNavigator {
     override fun createIntent(context: Context): Intent {
         return Intent(context, BarActivity::class.java)
     }

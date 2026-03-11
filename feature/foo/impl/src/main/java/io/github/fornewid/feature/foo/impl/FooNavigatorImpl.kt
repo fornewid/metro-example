@@ -8,7 +8,8 @@ import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.feature.foo.FooNavigator
 
 @ContributesBinding(AppScope::class)
-class FooNavigatorImpl @Inject constructor() : FooNavigator {
+@Inject
+class FooNavigatorImpl : FooNavigator {
     override fun createIntent(context: Context): Intent {
         return Intent(context, FooActivity::class.java)
     }

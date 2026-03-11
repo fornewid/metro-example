@@ -1,15 +1,18 @@
 package io.github.fornewid.data
 
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
+import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.core.kotlin.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 interface ExampleRepository {
     suspend fun getSomething(): String
 }
 
+@ContributesBinding(AppScope::class)
 internal class ExampleRepositoryImpl @Inject constructor(
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
 ) : ExampleRepository {

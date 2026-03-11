@@ -1,8 +1,11 @@
 package io.github.fornewid.feature.foo.impl
 
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
+import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.feature.foo.Foo
-import javax.inject.Inject
 
+@ContributesBinding(AppScope::class)
 class FooImpl @Inject constructor() : Foo {
 
     override fun toString(): String {

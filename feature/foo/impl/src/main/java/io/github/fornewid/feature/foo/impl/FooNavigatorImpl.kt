@@ -2,9 +2,12 @@ package io.github.fornewid.feature.foo.impl
 
 import android.content.Context
 import android.content.Intent
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
+import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.feature.foo.FooNavigator
-import javax.inject.Inject
 
+@ContributesBinding(AppScope::class)
 class FooNavigatorImpl @Inject constructor() : FooNavigator {
     override fun createIntent(context: Context): Intent {
         return Intent(context, FooActivity::class.java)

@@ -1,9 +1,14 @@
 package io.github.fornewid.feature.bar.impl
 
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.SingleIn
+import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.feature.bar.Bar
 import io.github.fornewid.feature.foo.Foo
-import javax.inject.Inject
 
+@SingleIn(AppScope::class)
+@ContributesBinding(AppScope::class)
 class BarImpl @Inject constructor(
     private val foo: Foo,
 ) : Bar {

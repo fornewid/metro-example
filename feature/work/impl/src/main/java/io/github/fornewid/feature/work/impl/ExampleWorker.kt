@@ -1,20 +1,18 @@
 package io.github.fornewid.feature.work.impl
 
 import android.content.Context
-import androidx.hilt.work.HiltWorker
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedInject
+import io.github.fornewid.core.kotlin.appGraph
 
-@HiltWorker
-class ExampleWorker @AssistedInject constructor(
-    @Assisted context: Context,
-    @Assisted workerParams: WorkerParameters,
-    private val example: ExampleUseCase,
+class ExampleWorker(
+    context: Context,
+    workerParams: WorkerParameters,
 ) : Worker(context, workerParams) {
 
     override fun doWork(): Result {
+        val component = applicationContext.appGraph<WorkerComponent>()
+        val example = component.exampleUseCase()
         val success = example()
         return if (success) {
             Result.success()

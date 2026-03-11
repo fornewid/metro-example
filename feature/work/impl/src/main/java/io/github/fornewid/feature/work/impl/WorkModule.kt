@@ -1,24 +1,20 @@
 package io.github.fornewid.feature.work.impl
 
-import android.content.Context
+import android.app.Application
 import androidx.work.WorkManager
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
+import dev.zacsweers.metro.SingleIn
+import io.github.fornewid.core.kotlin.AppScope
 
-@Module
-@InstallIn(SingletonComponent::class)
-object WorkModule {
+@ContributesTo(AppScope::class)
+interface WorkModule {
 
-    @Singleton
+    @SingleIn(AppScope::class)
     @Provides
     fun providesWorkManager(
-        @ApplicationContext context: Context,
+        application: Application,
     ): WorkManager {
-        return WorkManager.getInstance(context)
+        return WorkManager.getInstance(application)
     }
 }
-

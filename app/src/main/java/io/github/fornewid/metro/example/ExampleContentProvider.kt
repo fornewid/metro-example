@@ -4,27 +4,14 @@ import android.content.ContentProvider
 import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
-import dagger.hilt.EntryPoint
-import dagger.hilt.InstallIn
-import dagger.hilt.android.EntryPointAccessors
-import dagger.hilt.components.SingletonComponent
+import io.github.fornewid.core.kotlin.appGraph
 import io.github.fornewid.feature.bar.Bar
 
 class ExampleContentProvider : ContentProvider() {
 
-    @EntryPoint
-    @InstallIn(SingletonComponent::class)
-    interface ExampleContentProviderEntryPoint {
-        fun providesBar(): Bar
-    }
-
     override fun onCreate(): Boolean {
         val appContext = context?.applicationContext ?: throw IllegalStateException()
-        val entryPoint = EntryPointAccessors.fromApplication(
-            appContext,
-            ExampleContentProviderEntryPoint::class.java,
-        )
-        val bar: Bar = entryPoint.providesBar()
+        val bar: Bar = appContext.appGraph<AppGraph>().bar
         bar.toString()
         return true
     }

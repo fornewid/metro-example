@@ -24,7 +24,7 @@ fun ExampleNavGraph() {
             ExampleScreen(
                 screenName = "example",
                 viewModel = viewModel {
-                    component.exampleNavGraphViewModel()
+                    component.navComposeViewModel()
                 },
                 onClick = {
                     navController.navigate(route = "example_navigation")
@@ -43,7 +43,7 @@ fun ExampleNavGraph() {
                     screenName = "nested_example1",
                     viewModel = viewModel(
                         viewModelStoreOwner = parent,
-                        factory = GraphViewModelFactory { component.exampleNavGraphViewModel() },
+                        factory = GraphViewModelFactory { component.navComposeViewModel() },
                     ),
                     onClick = {
                         navController.navigate("nested_example2")
@@ -58,7 +58,7 @@ fun ExampleNavGraph() {
                     screenName = "nested_example2",
                     viewModel = viewModel(
                         viewModelStoreOwner = parent,
-                        factory = GraphViewModelFactory { component.exampleNavGraphViewModel() },
+                        factory = GraphViewModelFactory { component.navComposeViewModel() },
                     ),
                 )
             }

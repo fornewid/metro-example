@@ -5,5 +5,5 @@ import io.github.fornewid.core.kotlin.AppScope
 
 @ContributesTo(AppScope::class)
 interface NavFragmentComponent {
-    fun exampleNavGraphViewModel(): ExampleNavGraphViewModel
+    fun navFragmentViewModel(): ExampleNavGraphViewModel
 }

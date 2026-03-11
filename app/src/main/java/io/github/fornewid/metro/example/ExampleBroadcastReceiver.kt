@@ -3,18 +3,13 @@ package io.github.fornewid.metro.example
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import dagger.hilt.android.AndroidEntryPoint
+import io.github.fornewid.core.kotlin.appGraph
 import io.github.fornewid.feature.bar.Bar
-import javax.inject.Inject
 
-@AndroidEntryPoint
 class ExampleBroadcastReceiver : BroadcastReceiver() {
 
-    @Inject
-    lateinit var bar: Bar
-
     override fun onReceive(context: Context, intent: Intent) {
+        val bar: Bar = context.appGraph<AppGraph>().bar
         bar.toString()
     }
 }
-

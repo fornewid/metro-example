@@ -11,7 +11,7 @@ class ExampleNavGraphFragment : Fragment(R.layout.example_nav_graph_fragment) {
 
     private val viewModel: ExampleNavGraphViewModel by viewModels {
         GraphViewModelFactory {
-            requireContext().appGraph<NavFragmentComponent>().exampleNavGraphViewModel()
+            requireContext().appGraph<NavFragmentComponent>().navFragmentViewModel()
         }
     }
 

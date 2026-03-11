@@ -1,23 +1,16 @@
 package io.github.fornewid.metro.example
 
 import android.app.Application
-import androidx.hilt.work.HiltWorkerFactory
-import androidx.work.Configuration
-import dagger.hilt.android.HiltAndroidApp
-import javax.inject.Inject
+import dev.zacsweers.metro.createGraphFactory
+import io.github.fornewid.core.kotlin.AppGraphProvider
 
-@HiltAndroidApp
-class ExampleApplication : Application(), Configuration.Provider {
+class ExampleApplication : Application(), AppGraphProvider {
 
-    @Inject
-    lateinit var hiltWorkerFactory: HiltWorkerFactory
+    override val appGraph: Any by lazy {
+        createGraphFactory<AppGraph.Factory>().create(this)
+    }
 
     override fun onCreate() {
         super.onCreate()
     }
-
-    override val workManagerConfiguration: Configuration
-        get() = Configuration.Builder()
-            .setWorkerFactory(hiltWorkerFactory)
-            .build()
 }

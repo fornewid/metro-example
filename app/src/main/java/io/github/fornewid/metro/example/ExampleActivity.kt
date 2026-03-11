@@ -4,26 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import dagger.hilt.android.AndroidEntryPoint
+import io.github.fornewid.core.kotlin.GraphViewModelFactory
+import io.github.fornewid.core.kotlin.appGraph
 import io.github.fornewid.metro.example.databinding.ExampleActivityBinding
-import io.github.fornewid.feature.bar.BarNavigator
 import io.github.fornewid.feature.compose.ExampleComposeActivity
 import io.github.fornewid.feature.compose.advanced.AdvancedExampleComposeActivity
-import io.github.fornewid.feature.foo.FooNavigator
 import io.github.fornewid.feature.navigation.compose.ExampleNavigationComposeActivity
 import io.github.fornewid.feature.navigation.fragment.ExampleNavigationFragmentActivity
-import javax.inject.Inject
 
-@AndroidEntryPoint
 class ExampleActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var fooNavigator: FooNavigator
+    private val graph by lazy { appGraph<AppGraph>() }
 
-    @Inject
-    lateinit var barNavigator: BarNavigator
-
-    private val viewModel: ExampleViewModel by viewModels()
+    private val viewModel: ExampleViewModel by viewModels {
+        GraphViewModelFactory { graph.exampleViewModel() }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +28,10 @@ class ExampleActivity : AppCompatActivity() {
         viewModel.doSomething()
 
         binding.foo.setOnClickListener {
-            startActivity(fooNavigator.createIntent(this))
+            startActivity(graph.fooNavigator.createIntent(this))
         }
         binding.bar.setOnClickListener {
-            startActivity(barNavigator.createIntent(this))
+            startActivity(graph.barNavigator.createIntent(this))
         }
         binding.navigationFragment.setOnClickListener {
             startActivity(Intent(this, ExampleNavigationFragmentActivity::class.java))

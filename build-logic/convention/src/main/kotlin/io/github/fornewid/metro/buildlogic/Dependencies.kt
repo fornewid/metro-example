@@ -7,10 +7,6 @@ fun DependencyHandler.implementation(dependencyNotation: Any): Dependency? {
     return add("implementation", dependencyNotation)
 }
 
-fun DependencyHandler.ksp(dependencyNotation: Any): Dependency? {
-    return add("ksp", dependencyNotation)
-}
-
 fun DependencyHandler.findProject(
     path: String,
     configuration: String? = null,

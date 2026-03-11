@@ -13,8 +13,6 @@ dependencies {
     compileOnly(libs.android.pluginGradle)
     compileOnly(libs.kotlin.pluginGradle)
     compileOnly(libs.kotlin.composePluginGradle)
-    compileOnly(libs.ksp.pluginGradle)
-    compileOnly(libs.dagger.hilt.pluginGradle)
     compileOnly(libs.metro.pluginGradle)
 }
 
@@ -31,10 +29,6 @@ gradlePlugin {
         register("androidCompose") {
             id = "example.android.compose"
             implementationClass = "AndroidComposeConventionPlugin"
-        }
-        register("androidHilt") {
-            id = "example.android.hilt"
-            implementationClass = "AndroidHiltConventionPlugin"
         }
         register("androidMetro") {
             id = "example.android.metro"

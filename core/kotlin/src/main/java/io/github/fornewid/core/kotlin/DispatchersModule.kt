@@ -1,18 +1,15 @@
 package io.github.fornewid.core.kotlin
 
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
+import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import javax.inject.Singleton
 
-@Module
-@InstallIn(SingletonComponent::class)
-object DispatchersModule {
+@ContributesTo(AppScope::class)
+interface DispatchersModule {
 
     @DefaultDispatcher
     @Provides
@@ -31,7 +28,7 @@ object DispatchersModule {
     fun providesMainImmediateDispatcher(): CoroutineDispatcher = Dispatchers.Main.immediate
 
     @ApplicationScope
-    @Singleton
+    @SingleIn(AppScope::class)
     @Provides
     fun providesApplicationScope(
         @DefaultDispatcher dispatcher: CoroutineDispatcher

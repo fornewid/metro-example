@@ -1,6 +1,6 @@
 package io.github.fornewid.core.kotlin
 
-import javax.inject.Qualifier
+import dev.zacsweers.metro.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)

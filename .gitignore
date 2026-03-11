@@ -12,13 +12,17 @@ local.properties
 captures/
 .externalNativeBuild/
 .cxx/
-*.aab
+.navigation/
 *.apk
-output-metadata.json
+output.json
 
 # IntelliJ
 *.iml
-.idea/
+.idea/*
+.idea/caches
+.idea/codeStyles
+.idea/dictionaries
+.idea/libraries
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml

@@ -1,0 +1,19 @@
+plugins {
+    id 'example.android.library'
+    id 'example.android.hilt'
+}
+
+android {
+    namespace 'io.github.fornewid.data'
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    implementation project(':core:kotlin')
+
+    testImplementation libs.junit
+    androidTestImplementation libs.test.ext.junit
+    androidTestImplementation libs.test.espresso.core
+}

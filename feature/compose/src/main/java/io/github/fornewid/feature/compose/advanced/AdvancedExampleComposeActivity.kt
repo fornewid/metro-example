@@ -6,20 +6,18 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
-import dagger.hilt.EntryPoint
-import dagger.hilt.InstallIn
-import dagger.hilt.android.AndroidEntryPoint
+import androidx.compose.ui.platform.LocalContext
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Inject
 import io.github.fornewid.core.compose.ExampleTheme
+import io.github.fornewid.core.kotlin.AppScope
+import io.github.fornewid.core.kotlin.appGraph
 import io.github.fornewid.feature.bar.Bar
-import io.github.fornewid.feature.compose.hilt.ComposableComponent
-import io.github.fornewid.feature.compose.hilt.ComposableScoped
-import io.github.fornewid.feature.compose.hilt.HiltComposable
-import io.github.fornewid.feature.compose.hilt.fromComposable
-import javax.inject.Inject
 
-@AndroidEntryPoint
 class AdvancedExampleComposeActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,17 +25,36 @@ class AdvancedExampleComposeActivity : ComponentActivity() {
 
         setContent {
             ExampleTheme {
-                HiltComposableScoped.Screen()
+                ComposableScoped.Screen()
             }
         }
     }
 }
 
-object HiltComposableScoped {
+@ContributesTo(AppScope::class)
+interface AdvancedComposeComponent {
+    fun exampleStateHolder(): ExampleStateHolder
+}
+
+class ExampleStateHolder @Inject constructor(
+    val bar: Bar,
+) {
+    override fun toString(): String {
+        return "ExampleStateHolder@" + hashCode().toString(16)
+    }
+}
+
+private val LocalComponent = staticCompositionLocalOf<AdvancedComposeComponent> {
+    error("CompositionLocal LocalComponent not present")
+}
+
+object ComposableScoped {
 
     @Composable
     fun Screen() {
-        HiltComposable {
+        val context = LocalContext.current
+        val component = remember { context.appGraph<AdvancedComposeComponent>() }
+        CompositionLocalProvider(LocalComponent provides component) {
             GrandParents()
         }
     }
@@ -74,9 +91,7 @@ object HiltComposableScoped {
                 text = "Children: $stateHolder",
                 color = Color.Blue,
             )
-            HiltComposable {
-                GrandChildren()
-            }
+            GrandChildren()
         }
     }
 
@@ -90,24 +105,9 @@ object HiltComposableScoped {
 
     @Composable
     private fun rememberStateHolder(): ExampleStateHolder {
-        val entryPoint = fromComposable(ExampleEntryPoint::class.java)
+        val component = LocalComponent.current
         return remember {
-            entryPoint.exampleStateHolder()
+            component.exampleStateHolder()
         }
-    }
-}
-
-@EntryPoint
-@InstallIn(ComposableComponent::class)
-interface ExampleEntryPoint {
-    fun exampleStateHolder(): ExampleStateHolder
-}
-
-@ComposableScoped
-class ExampleStateHolder @Inject constructor(
-    val bar: Bar,
-) {
-    override fun toString(): String {
-        return "ExampleStateHolder@" + hashCode().toString(16)
     }
 }

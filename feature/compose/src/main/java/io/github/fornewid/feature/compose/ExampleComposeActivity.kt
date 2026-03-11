@@ -10,35 +10,27 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalContext
-import dagger.hilt.EntryPoint
-import dagger.hilt.InstallIn
-import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.EntryPointAccessors
-import dagger.hilt.components.SingletonComponent
 import io.github.fornewid.core.compose.ExampleTheme
+import io.github.fornewid.core.kotlin.appGraph
 import io.github.fornewid.feature.bar.Bar
-import javax.inject.Inject
 
-@AndroidEntryPoint
 class ExampleComposeActivity : ComponentActivity() {
-
-    @Inject
-    lateinit var bar: Bar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val component = appGraph<ComposeComponent>()
 
         setContent {
             ExampleTheme {
                 Column {
                     // Option 1
-                    StateHoisting.Screen(bar = bar)
+                    StateHoisting.Screen(bar = component.bar)
 
                     // Option 2
-                    CompositionLocal.Screen(bar = bar)
+                    CompositionLocal.Screen(bar = component.bar)
 
                     // Option 3
-                    EntryPoints.Screen()
+                    GraphAccess.Screen()
                 }
             }
         }
@@ -117,9 +109,9 @@ object CompositionLocal {
 }
 
 /**
- * https://dagger.dev/hilt/entry-points
+ * Access dependencies from Metro graph directly
  */
-object EntryPoints {
+object GraphAccess {
 
     @Composable
     fun Screen() {
@@ -152,15 +144,7 @@ object EntryPoints {
     private fun rememberBar(): Bar {
         val context = LocalContext.current
         return remember {
-            EntryPointAccessors
-                .fromApplication(context, ExampleEntryPoint::class.java)
-                .bar()
+            context.appGraph<ComposeComponent>().bar
         }
-    }
-
-    @EntryPoint
-    @InstallIn(SingletonComponent::class)
-    interface ExampleEntryPoint {
-        fun bar(): Bar
     }
 }

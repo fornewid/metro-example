@@ -1,7 +1,7 @@
 plugins {
     id 'example.android.library'
     id 'example.android.compose'
-    id 'example.android.hilt'
+    id 'example.android.metro'
 }
 
 android {
@@ -12,12 +12,12 @@ android {
 }
 
 dependencies {
+    implementation project(':core:kotlin')
     implementation project(':core:compose')
     implementation project(':feature:bar:api')
     implementation libs.compose.foundation
     implementation libs.compose.material
     implementation libs.androidx.navigation.compose
-    implementation libs.androidx.hilt.lifecycle.viewmodel.compose
 
     testImplementation libs.junit
     androidTestImplementation libs.test.ext.junit

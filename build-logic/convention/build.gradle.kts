@@ -15,6 +15,7 @@ dependencies {
     compileOnly(libs.kotlin.composePluginGradle)
     compileOnly(libs.ksp.pluginGradle)
     compileOnly(libs.dagger.hilt.pluginGradle)
+    compileOnly(libs.metro.pluginGradle)
 }
 
 gradlePlugin {
@@ -34,6 +35,10 @@ gradlePlugin {
         register("androidHilt") {
             id = "example.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
+        }
+        register("androidMetro") {
+            id = "example.android.metro"
+            implementationClass = "AndroidMetroConventionPlugin"
         }
     }
 }

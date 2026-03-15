@@ -1,0 +1,21 @@
+plugins {
+    id 'example.android.library'
+    id 'example.android.metro'
+}
+
+android {
+    namespace 'io.github.fornewid.core.kotlin'
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.work.runtime
+    implementation libs.coroutines.android
+
+    testImplementation libs.junit
+    androidTestImplementation libs.test.ext.junit
+    androidTestImplementation libs.test.espresso.core
+}

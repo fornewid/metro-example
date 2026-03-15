@@ -1,0 +1,53 @@
+plugins {
+    id 'example.android.application'
+    id 'example.android.metro'
+}
+
+android {
+    namespace 'io.github.fornewid.metro.example'
+    defaultConfig {
+        applicationId "io.github.fornewid.metro.example"
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(':core:kotlin')
+    implementation project(':data')
+
+    implementation project(':feature:foo:api')
+    implementation project(':feature:foo:impl')
+
+    implementation project(':feature:bar:api')
+    implementation project(':feature:bar:impl')
+
+    implementation project(':feature:work:api')
+    implementation project(':feature:work:impl')
+
+    implementation project(':feature:navigation:fragment')
+    implementation project(':feature:navigation:compose')
+
+    implementation project(':feature:compose')
+
+    implementation libs.kotlin.stdlib
+
+    implementation libs.androidx.activity
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.fragment
+
+    implementation libs.androidx.work.runtime
+
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.service
+
+    testImplementation libs.junit
+    androidTestImplementation libs.test.ext.junit
+    androidTestImplementation libs.test.espresso.core
+}

@@ -5,10 +5,7 @@ import dev.zacsweers.metro.Inject
 import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.core.kotlin.InternalFeatureApi
 import io.github.fornewid.feature.bar.Bar
-
-interface ExampleUseCase {
-    operator fun invoke(): Boolean
-}
+import io.github.fornewid.feature.work.ExampleUseCase
 
 @InternalFeatureApi
 @ContributesBinding(AppScope::class)

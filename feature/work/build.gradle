@@ -1,24 +1,20 @@
 plugins {
     id 'example.android.library'
-    id 'example.android.compose'
     id 'example.android.metro'
 }
 
 android {
-    namespace 'io.github.fornewid.feature.navigation.compose'
+    namespace 'io.github.fornewid.feature.work'
     defaultConfig {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 }
 
 dependencies {
-    implementation project(':core:kotlin')
-    implementation project(':core:compose')
     implementation project(':feature:bar')
-    implementation libs.compose.foundation
-    implementation libs.compose.material
-    implementation libs.androidx.navigation.compose
-    implementation libs.androidx.lifecycle.viewmodel.compose
+    implementation project(':core:kotlin')
+
+    implementation libs.androidx.work.runtime
 
     testImplementation libs.junit
     androidTestImplementation libs.test.ext.junit

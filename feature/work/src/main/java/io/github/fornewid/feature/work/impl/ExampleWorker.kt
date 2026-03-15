@@ -6,7 +6,9 @@ import androidx.work.WorkerParameters
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.Assisted
+import io.github.fornewid.core.kotlin.InternalFeatureApi
 
+@InternalFeatureApi
 @AssistedInject
 class ExampleWorker(
     @Assisted context: Context,

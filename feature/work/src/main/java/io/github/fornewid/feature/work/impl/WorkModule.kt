@@ -6,7 +6,9 @@ import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
 import io.github.fornewid.core.kotlin.AppScope
+import io.github.fornewid.core.kotlin.InternalFeatureApi
 
+@InternalFeatureApi
 @ContributesTo(AppScope::class)
 interface WorkModule {
 

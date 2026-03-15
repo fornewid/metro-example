@@ -6,7 +6,9 @@ import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.StringKey
 import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.core.kotlin.ChildWorkerFactory
+import io.github.fornewid.core.kotlin.InternalFeatureApi
 
+@InternalFeatureApi
 @ContributesTo(AppScope::class)
 interface WorkerComponent {
 

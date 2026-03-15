@@ -5,8 +5,10 @@ import android.content.Intent
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.Inject
 import io.github.fornewid.core.kotlin.AppScope
+import io.github.fornewid.core.kotlin.InternalFeatureApi
 import io.github.fornewid.feature.foo.FooNavigator
 
+@InternalFeatureApi
 @ContributesBinding(AppScope::class)
 @Inject
 class FooNavigatorImpl : FooNavigator {

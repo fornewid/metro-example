@@ -10,7 +10,7 @@ import io.github.fornewid.core.kotlin.InternalFeatureApi
 
 @InternalFeatureApi
 @ContributesTo(AppScope::class)
-interface WorkerComponent {
+internal interface WorkerComponent {
 
     @Provides
     @IntoMap

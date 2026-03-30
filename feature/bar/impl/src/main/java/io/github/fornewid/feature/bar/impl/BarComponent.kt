@@ -6,6 +6,6 @@ import io.github.fornewid.core.kotlin.InternalFeatureApi
 
 @InternalFeatureApi
 @ContributesTo(AppScope::class)
-interface BarComponent {
+internal interface BarComponent {
     fun barViewModel(): BarViewModel
 }

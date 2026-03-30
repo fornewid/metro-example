@@ -1,0 +1,24 @@
+plugins {
+    id 'example.android.library'
+    id 'example.android.compose'
+    id 'example.android.metro'
+}
+
+android {
+    namespace 'io.github.fornewid.feature.compose'
+}
+
+dependencies {
+    implementation project(':feature:compose:api')
+    implementation project(':core:kotlin')
+    implementation project(':core:compose')
+
+    implementation libs.compose.foundation
+    implementation libs.compose.material
+
+    implementation libs.androidx.activity
+
+    testImplementation libs.junit
+    androidTestImplementation libs.test.ext.junit
+    androidTestImplementation libs.test.espresso.core
+}

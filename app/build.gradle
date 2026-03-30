@@ -21,11 +21,14 @@ dependencies {
     implementation project(':core:kotlin')
     implementation project(':data')
 
-    implementation project(':feature:foo')
+    implementation project(':feature:foo:api')
+    implementation project(':feature:foo:impl')
 
-    implementation project(':feature:bar')
+    implementation project(':feature:bar:api')
+    implementation project(':feature:bar:impl')
 
-    implementation project(':feature:work')
+    implementation project(':feature:work:api')
+    implementation project(':feature:work:impl')
 
     implementation project(':feature:navigation:fragment')
     implementation project(':feature:navigation:compose')

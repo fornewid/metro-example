@@ -1,0 +1,20 @@
+plugins {
+    id 'example.android.library'
+    id 'example.android.metro'
+}
+
+android {
+    namespace 'io.github.fornewid.feature.work'
+}
+
+dependencies {
+    implementation project(':feature:work:api')
+    implementation project(':feature:bar:api')
+    implementation project(':core:kotlin')
+    implementation project(':data')
+
+    implementation libs.androidx.work.runtime
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.work.testing
+}

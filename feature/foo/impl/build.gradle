@@ -4,19 +4,16 @@ plugins {
 }
 
 android {
-    namespace 'io.github.fornewid.feature.navigation.fragment'
-    defaultConfig {
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
+    namespace 'io.github.fornewid.feature.foo'
 }
 
 dependencies {
-    implementation project(':feature:bar:api')
+    implementation project(':feature:foo:api')
     implementation project(':core:kotlin')
+    implementation project(':data')
 
-    implementation libs.androidx.fragment
-
-    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
     implementation libs.androidx.lifecycle.viewmodel.ktx
 
     testImplementation libs.junit

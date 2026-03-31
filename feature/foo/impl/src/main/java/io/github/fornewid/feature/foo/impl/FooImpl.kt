@@ -2,8 +2,8 @@ package io.github.fornewid.feature.foo.impl
 
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.Inject
-import io.github.fornewid.core.kotlin.AppScope
-import io.github.fornewid.core.kotlin.InternalFeatureApi
+import io.github.fornewid.core.metro.AppScope
+import io.github.fornewid.core.metro.InternalFeatureApi
 import io.github.fornewid.feature.foo.Foo
 
 @InternalFeatureApi

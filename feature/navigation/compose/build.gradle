@@ -12,7 +12,7 @@ android {
 }
 
 dependencies {
-    implementation project(':core:kotlin')
+    implementation project(':core:metro')
     implementation project(':core:compose')
     implementation project(':feature:bar:api')
     implementation libs.compose.foundation

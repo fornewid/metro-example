@@ -3,9 +3,9 @@ package io.github.fornewid.feature.foo.impl
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
-import io.github.fornewid.core.kotlin.GraphViewModelFactory
-import io.github.fornewid.core.kotlin.InternalFeatureApi
-import io.github.fornewid.core.kotlin.appGraph
+import io.github.fornewid.core.metro.GraphViewModelFactory
+import io.github.fornewid.core.metro.InternalFeatureApi
+import io.github.fornewid.core.metro.appGraph
 import io.github.fornewid.feature.foo.R
 
 @OptIn(InternalFeatureApi::class)

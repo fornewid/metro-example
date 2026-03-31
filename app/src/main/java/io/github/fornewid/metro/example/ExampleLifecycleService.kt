@@ -3,7 +3,7 @@ package io.github.fornewid.metro.example
 import android.content.Intent
 import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.lifecycleScope
-import io.github.fornewid.core.kotlin.appGraph
+import io.github.fornewid.core.metro.appGraph
 import io.github.fornewid.feature.bar.Bar
 import kotlinx.coroutines.launch
 

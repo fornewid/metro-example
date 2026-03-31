@@ -1,4 +1,4 @@
-package io.github.fornewid.core.kotlin
+package io.github.fornewid.core.metro
 
 import android.content.Context
 

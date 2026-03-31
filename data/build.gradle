@@ -11,6 +11,7 @@ android {
 }
 
 dependencies {
+    implementation project(':core:metro')
     implementation project(':core:kotlin')
     implementation libs.coroutines.core
 

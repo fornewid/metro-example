@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import io.github.fornewid.core.kotlin.GraphViewModelFactory
-import io.github.fornewid.core.kotlin.appGraph
+import io.github.fornewid.core.metro.GraphViewModelFactory
+import io.github.fornewid.core.metro.appGraph
 
 class ExampleFragment : Fragment(R.layout.example_fragment) {
 

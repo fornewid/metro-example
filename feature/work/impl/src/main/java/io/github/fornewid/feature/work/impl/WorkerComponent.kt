@@ -4,9 +4,9 @@ import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.IntoMap
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.StringKey
-import io.github.fornewid.core.kotlin.AppScope
-import io.github.fornewid.core.kotlin.ChildWorkerFactory
-import io.github.fornewid.core.kotlin.InternalFeatureApi
+import io.github.fornewid.core.metro.AppScope
+import io.github.fornewid.core.metro.ChildWorkerFactory
+import io.github.fornewid.core.metro.InternalFeatureApi
 
 @InternalFeatureApi
 @ContributesTo(AppScope::class)

@@ -14,8 +14,8 @@ import androidx.compose.ui.platform.LocalContext
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Inject
 import io.github.fornewid.core.compose.ExampleTheme
-import io.github.fornewid.core.kotlin.AppScope
-import io.github.fornewid.core.kotlin.appGraph
+import io.github.fornewid.core.metro.AppScope
+import io.github.fornewid.core.metro.appGraph
 import io.github.fornewid.feature.bar.Bar
 
 class AdvancedExampleComposeActivity : ComponentActivity() {

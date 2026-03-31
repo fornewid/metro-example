@@ -4,7 +4,7 @@ import android.content.ContentProvider
 import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
-import io.github.fornewid.core.kotlin.appGraph
+import io.github.fornewid.core.metro.appGraph
 import io.github.fornewid.feature.bar.Bar
 
 class ExampleContentProvider : ContentProvider() {

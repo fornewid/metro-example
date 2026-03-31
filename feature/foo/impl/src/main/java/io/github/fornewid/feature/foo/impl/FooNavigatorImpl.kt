@@ -11,7 +11,7 @@ import io.github.fornewid.feature.foo.FooNavigator
 @InternalFeatureApi
 @ContributesBinding(AppScope::class)
 @Inject
-internal class FooNavigatorImpl : FooNavigator {
+class FooNavigatorImpl : FooNavigator {
     override fun createIntent(context: Context): Intent {
         return Intent(context, FooActivity::class.java)
     }

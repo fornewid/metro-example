@@ -5,6 +5,6 @@ import io.github.fornewid.core.kotlin.AppScope
 import io.github.fornewid.feature.bar.Bar
 
 @ContributesTo(AppScope::class)
-internal interface ComposeComponent {
+interface ComposeComponent {
     val bar: Bar
 }

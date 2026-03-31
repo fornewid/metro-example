@@ -11,7 +11,7 @@ import io.github.fornewid.feature.work.ExampleTasks
 @InternalFeatureApi
 @ContributesBinding(AppScope::class)
 @Inject
-internal class ExampleTasksImpl(
+class ExampleTasksImpl(
     private val workManager: WorkManager,
 ) : ExampleTasks {
 

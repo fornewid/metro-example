@@ -33,8 +33,7 @@ dependencies {
     implementation project(':feature:navigation:fragment')
     implementation project(':feature:navigation:compose')
 
-    implementation project(':feature:compose:api')
-    implementation project(':feature:compose:impl')
+    implementation project(':feature:compose')
 
     implementation libs.kotlin.stdlib
 

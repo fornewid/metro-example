@@ -10,7 +10,7 @@ import io.github.fornewid.feature.work.ExampleUseCase
 @InternalFeatureApi
 @ContributesBinding(AppScope::class)
 @Inject
-internal class ExampleUseCaseImpl(
+class ExampleUseCaseImpl(
     private val bar: Bar,
 ) : ExampleUseCase {
 

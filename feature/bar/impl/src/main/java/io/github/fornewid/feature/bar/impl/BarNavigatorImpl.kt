@@ -11,7 +11,7 @@ import io.github.fornewid.feature.bar.BarNavigator
 @InternalFeatureApi
 @ContributesBinding(AppScope::class)
 @Inject
-internal class BarNavigatorImpl : BarNavigator {
+class BarNavigatorImpl : BarNavigator {
     override fun createIntent(context: Context): Intent {
         return Intent(context, BarActivity::class.java)
     }

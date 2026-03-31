@@ -3,7 +3,7 @@ package io.github.fornewid.metro.example
 import android.app.Application
 import androidx.work.Configuration
 import dev.zacsweers.metro.createGraphFactory
-import io.github.fornewid.core.kotlin.AppGraphProvider
+import io.github.fornewid.core.metro.AppGraphProvider
 
 class ExampleApplication : Application(), AppGraphProvider, Configuration.Provider {
 

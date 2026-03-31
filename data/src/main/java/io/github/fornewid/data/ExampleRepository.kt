@@ -2,7 +2,7 @@ package io.github.fornewid.data
 
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.Inject
-import io.github.fornewid.core.kotlin.AppScope
+import io.github.fornewid.core.metro.AppScope
 import io.github.fornewid.core.kotlin.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.delay

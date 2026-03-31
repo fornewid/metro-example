@@ -8,8 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import io.github.fornewid.core.kotlin.GraphViewModelFactory
-import io.github.fornewid.core.kotlin.appGraph
+import io.github.fornewid.core.metro.GraphViewModelFactory
+import io.github.fornewid.core.metro.appGraph
 
 @Composable
 fun ExampleNavGraph() {

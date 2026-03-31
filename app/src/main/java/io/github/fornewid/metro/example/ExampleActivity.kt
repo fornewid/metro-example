@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import io.github.fornewid.core.kotlin.GraphViewModelFactory
-import io.github.fornewid.core.kotlin.appGraph
+import io.github.fornewid.core.metro.GraphViewModelFactory
+import io.github.fornewid.core.metro.appGraph
 import io.github.fornewid.metro.example.databinding.ExampleActivityBinding
 import io.github.fornewid.feature.compose.ExampleComposeActivity
 import io.github.fornewid.feature.compose.advanced.AdvancedExampleComposeActivity

@@ -10,7 +10,7 @@ android {
 dependencies {
     implementation project(':feature:bar:api')
     implementation project(':feature:foo:api')
-    implementation project(':core:kotlin')
+    implementation project(':core:metro')
     implementation project(':data')
 
     implementation libs.androidx.activity

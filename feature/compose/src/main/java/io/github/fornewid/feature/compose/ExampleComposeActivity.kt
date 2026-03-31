@@ -11,7 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalContext
 import io.github.fornewid.core.compose.ExampleTheme
-import io.github.fornewid.core.kotlin.appGraph
+import io.github.fornewid.core.metro.appGraph
 import io.github.fornewid.feature.bar.Bar
 
 class ExampleComposeActivity : ComponentActivity() {

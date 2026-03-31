@@ -5,8 +5,8 @@ import androidx.work.WorkManager
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
-import io.github.fornewid.core.kotlin.AppScope
-import io.github.fornewid.core.kotlin.InternalFeatureApi
+import io.github.fornewid.core.metro.AppScope
+import io.github.fornewid.core.metro.InternalFeatureApi
 
 @InternalFeatureApi
 @ContributesTo(AppScope::class)
